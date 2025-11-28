@@ -1,0 +1,244 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  color: #2d3748;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.home-main {
+  width: 100%;
+  padding: 2rem;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.greeting h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #8a4fff, #ff6b9d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #718096;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.actions-section {
+  margin-bottom: 3rem;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+  border-left-width: 0;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #8a4fff;
+}
+
+.action-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.action-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.action-content p {
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.action-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #8a4fff;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.action-card:hover .action-arrow {
+  transform: translateX(4px);
+}
+
+.action-card.emotion {
+  border-left: 4px solid #8a4fff;
+}
+
+.action-card.history {
+  border-left: 4px solid #00d4aa;
+}
+
+.action-card.stats {
+  border-left: 4px solid #ff6b9d;
+}
+
+.action-card.profile {
+  border-left: 4px solid #f59e0b;
+}
+
+.inspiration-section {
+  margin-bottom: 3rem;
+}
+
+.inspiration-card {
+  background: linear-gradient(135deg, #8a4fff, #ff6b9d);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.inspiration-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.inspiration-icon {
+  font-size: 2.5rem;
+}
+
+.inspiration-title h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.inspiration-title.date {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.inspiration-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-style: italic;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inspiration-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.inspiration-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.activity-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.activity-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.activity-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activity-icon {
+  font-size: 2rem;
+}
+
+.activity-info p {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0;
+}
+
+.activity-detail {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+@media (max-width: 768px) {
+  .home-main {
+    padding: 1rem;
+  }
+
+  .greeting h1 {
+    font-size: 2.2rem;
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-card {
+    padding: 1.5rem;
+  }
+
+  .inspiration-card {
+    padding: 2rem 1.5rem;
+  }
+}

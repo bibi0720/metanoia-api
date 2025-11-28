@@ -1,0 +1,392 @@
+/* src/App.css */
+
+/* Variables CSS para tema claro (default) */
+:root {
+  --primary-color: #8a4fff;
+  --primary-dark: #723ec9;
+  --secondary-color: #ff6b9d;
+  --accent-color: #FFD700;
+  --bg-primary: #f8faff;
+  --bg-secondary: #f0f4ff;
+  --bg-tertiary: #e5edff;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --text-tertiary: #a0aec0;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --gradient-bg: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  --gradient-primary: linear-gradient(135deg, #8a4fff, #ff6b9d);
+  --success-color: #c6f6d5;
+  --error-color: #fed7d7;
+  --warning-color: #fef3c7;
+}
+
+/* Variables CSS para tema oscuro */
+.dark {
+  --primary-color: #a29bfe;
+  --primary-dark: #8a7ce8;
+  --secondary-color: #ff8a80;
+  --accent-color: #FFD700;
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-tertiary: #0f3460;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-tertiary: #999999;
+  --border-color: #2d3748;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.4);
+  --gradient-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --gradient-primary: linear-gradient(135deg, #a29bfe, #ff8a80);
+  --success-color: #38a169;
+  --error-color: #e53e3e;
+  --warning-color: #dd6b20;
+}
+
+/* CORRECCIÓN COMPLETA TEMA OSCURO */
+body.dark {
+  color-scheme: dark;
+  background: var(--gradient-bg) !important;
+}
+
+body.dark.App {
+  background: var(--gradient-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Aplicar tema oscuro */
+body.dark.card,
+body.dark.settings-container,
+body.dark.profile-section,
+body.dark.emotions-grid,
+body.dark.history-list,
+body.dark.stats-container {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Formularios en tema oscuro */
+body.dark.form-input,
+body.dark.form-select,
+body.dark.form-textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+body.dark.form-input:focus,
+body.dark.form-select:focus,
+body.dark.form-textarea:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.1) !important;
+}
+
+/* Botones en tema oscuro */
+body.dark.btn-secondary {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+body.dark.btn-secondary:hover {
+  background-color: var(--bg-tertiary) !important;
+}
+
+/* Textos en tema oscuro */
+body.dark.text-muted,
+body.dark.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+body.dark.text-tertiary {
+  color: var(--text-tertiary) !important;
+}
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos base */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--gradient-bg);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden; /* 👈 Evita scroll horizontal */
+}
+
+/* Contenedor principal */
+.App {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 👈 Asegura que ocupe todo el ancho sin centrar innecesariamente */
+}
+
+/* Utilidades de tema */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.border-color {
+  border-color: var(--border-color);
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Botones de navegación */
+.nav-button {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* Tarjetas */
+.card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Formularios */
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.1);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Botones */
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--error-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Mensajes */
+.message {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.message-success {
+  background: var(--success-color);
+  color: white;
+}
+
+.message-error {
+  background: var(--error-color);
+  color: white;
+}
+
+.message-warning {
+  background: var(--warning-color);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .App {
+    padding: 0;
+  }
+  .card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .form-input {
+    padding: 0.75rem;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.d-flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}

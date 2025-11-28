@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "c14e6b3e-3ce4-49f7-925a-5dfcc14f8958",
+		"name": "Metanoia API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49738832",
+		"_collection_link": "https://stmartinez07-5201782.postman.co/workspace/STEPHANY-BIBIANA-MARTINEZ-NAVAR~93e6c777-3ed0-45aa-89b1-7c23a6336bcc/collection/49743756-c14e6b3e-3ce4-49f7-925a-5dfcc14f8958?action=share&source=collection_link&creator=49738832"
+	},
+	"item": [
+		{
+			"name": "Autenticación",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"demo@metanoia.com\",\r\n  \"pin\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro E",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{userId}}\",\r\n  \"emotion\": \"feliz\",\r\n  \"note\": \"Tuve un día productivo\",\r\n  \"playSound\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/emotions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"emotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historial",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/emotions/{{userId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"emotions",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recomendaciones",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Estadísticas S",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Recordatorio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{userId}}\",\r\n  \"time\": \"20:00\",\r\n  \"message\": \"Hacer check-in emocional\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/reminders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"reminders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alertas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{userId}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/notifications/alert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"notifications",
+						"alert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación E",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Ej Estadísticas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
